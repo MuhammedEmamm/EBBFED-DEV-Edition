@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## For Building this Devloping code and change it to Prod Mode 
+
+run this command in Project Folder cmd  "ngbuild --prod --base-href=./"
+
+then copy the code in dist folder for making a successful publish
