@@ -1,0 +1,298 @@
+<!--// Main Wrapper \\-->
+<div class="sportsmagazine-main-wrapper">
+
+  <!--// Header \\-->
+  <header id="sportsmagazine-header" class="sportsmagazine-header-one">
+
+    <!--// MainSection \\-->
+    <div class="sportsmagazine-main-header">
+      <div class="container">
+        <div class="row">
+          <aside class="col-md-2"><a routerLink="/" class="sportsmagazine-logo"><img src="assets/images/logo-1.png" alt=""></a></aside>
+          <div class="col-md-10">
+            <div class="sportsmagazine-right-section">
+              <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1"
+                    aria-expanded="true">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li [ngClass]="{'active' : router.url == '/'}">
+                      <a routerLink="/">الصفحة الرئيسية</a>
+
+                    </li>
+                    <li [ngClass]="{'active' : router.url == '/union-history'|| router.url == '/union-presidents' || router.url == '/union-decisions' }">
+                      <a>الإتحاد</a>
+                      <ul class="sportsmagazine-dropdown-menu">
+                        <li>
+                          <a routerLink="/union-history"> تاريخ الإتحاد</a>
+
+                        </li>
+                        <li>
+                          <a routerLink="/union-presidents"> مجلس الإتحاد</a>
+                        </li>
+                        <li>
+                          <a routerLink="/union-decisions">قرارات المجلس</a>
+                        </li>
+                        <li>
+                          <a> لجان الإتحاد <span class="badge badge-primary">قريبا</span>
+                          </a>
+
+                        </li>
+
+                      </ul>
+
+                    </li>
+
+                    <li [ngClass]="{'active' : router.url == '/national-matches-table'|| router.url == '/national-match-result' || router.url == '/national-news' }">
+                      <a>الفرق الوطنية </a>
+                      <ul class="sportsmagazine-dropdown-menu">
+                        <li>
+                          <a routerLink="/national-match-result"> نتائج المباریات</a>
+
+                        </li>
+                        <li>
+                          <a routerLink="/national-news"> آخر الأخبار </a>
+                        </li>
+                        <li>
+                          <a routerLink="/national-matches-table">الجداول الخاصة بالمباریات أو البطولات</a>
+                        </li>
+                      </ul>
+
+                    </li>
+
+                    <li>
+                      <a>3×3</a>
+                      <ul class="sportsmagazine-dropdown-menu">
+
+                        <li>
+                          <a href="https://fiba3x3.basketball/en/rankings/individual.html" target="blank"> ترتيب الفرق العالمية في بطولة 3 * 3 </a>
+                        </li>
+                        <li>
+                          <a href="https://fiba3x3.basketball/en/rules.html" target="blank">قوانين وقواعد اللعبة</a>
+                        </li>
+                        <li>
+                          <a> مسابقات</a>
+                        </li>
+
+
+                      </ul>
+                    </li>
+                    
+                    <li [ngClass]="{'active' : router.url == '/matches-table' || router.url == '/match-result' || router.url == '/rules&regulations'  }">
+                      <a>المباريات</a>
+
+                      <ul class="sportsmagazine-dropdown-menu">
+                        <li>
+                          <a routerLink="/rules&regulations"> القواعد والقوانین</a>
+
+                        </li>
+
+                        <li>
+                          <a routerLink="/matches-table">جدول المباریات</a>
+                        </li>
+                        <li>
+                          <a routerLink="/match-result">نتائج المباریات </a>
+
+                        </li>
+
+                      </ul>
+                    </li>
+
+                    <li [ngClass]="{'active' : router.url == '/players'}">
+                      <a routerLink="/players">اللاعبين</a>
+                    </li>
+                    <li [ngClass]="{'active' : router.url == '/coaches' }">
+                      <a routerLink="/coaches">المدربين</a>
+                    </li>
+                    <li [ngClass]="{'active' : router.url == '/rulers' }">
+                      <a routerLink="/rulers">الحكام</a>
+                    </li>
+                    
+              
+                 
+                 
+                    <li [ngClass]="{'active' : router.url == '/clubs'}">
+                      <a routerLink="/clubs"> الأندية</a>
+                    </li>
+                    <li [ngClass]="{'active' : router.url == '/news'}">
+                      <a routerLink="/news"> الأخبار</a>
+                    </li>
+                    <li [ngClass]="{'active' : router.url == '/articles'}">
+                      <a routerLink="/articles">المقالات</a>
+                    </li>
+                             
+                    <li [ngClass]="{'active' : router.url == '/gallery'}">
+                      <a routerLink="/gallery">ألبوم الصور</a>
+                    </li>
+
+                    <li [ngClass]="{'active' : router.url == '/contact-us'}">
+                      <a routerLink="/contact-us">اتصل بنا</a>
+                    </li>
+         
+
+
+
+                  </ul>
+                </div>
+              </nav>
+              <a data-toggle="modal" data-target="#searchModal" href="#" class="sportsmagazine-search-btn sportsmagazine-colorhover">
+                <i class="fa fa-search"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--// MainSection \\-->
+
+  </header>
+  <!--// Header \\-->
+
+
+
+
+
+
+  <router-outlet></router-outlet>
+
+  <!--// Footer \\-->
+  <footer id="sportsmagazine-footer" class="sportsmagazine-footer-one">
+
+    <!--// Footer Widget \\-->
+    <div class="sportsmagazine-footer-widget">
+      <div class="container">
+        <div class="row">
+          <!--// Widget Contact Info \\-->
+          <aside class="col-md-6 widget widget_contact_info">
+            <a href="index.html" class="footer-logo">
+              <img src="assets/images/logo-1.png" alt="">
+            </a>
+            <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي
+              القارئ عن التركيز على الشكل
+              الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم
+              استخدام.</p>
+            <ul class="sportsmagazine-social-network">
+              <li>
+                <a href="https://www.facebook.com/" class="sportsmagazine-colorhover fa fa-facebook-official"></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/login" class="sportsmagazine-colorhover fa fa-twitter-square"></a>
+              </li>
+              <li>
+                <a href="https://pk.linkedin.com/" class="sportsmagazine-colorhover fa fa-linkedin-square"></a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/" class="sportsmagazine-colorhover fa fa-google-plus-square"></a>
+              </li>
+            </ul>
+            <ul class="sportsmagazine-info-list">
+              <li>
+                <i class="fa fa-map-marker"></i>
+                <span>العنوان الرئيسي </span>
+              </li>
+              <li>
+                <i class="fa fa-phone"></i>
+                <span>(02) 123 45 678 - 987 65 432</span>
+              </li>
+              <li>
+                <i class="fa fa-envelope"></i>
+                <span>
+                  <a href="mailto:name@email.com">info@example.com</a>
+                </span>
+              </li>
+            </ul>
+          </aside>
+          <!--// Widget Contact Info \\-->
+          <!--// Widget Twitter \\-->
+          <aside class="col-md-6 widget widget_twitter">
+            <div class="footer-widget-title">
+              <h2>تويتر فيدس</h2>
+            </div>
+            <ul>
+              <li>
+                <i class="fa fa-twitter"></i>
+                <span>@كرة سلة</span>
+                <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
+                  سيلهي القارئ عن التركيز
+                  على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي
+                </p>
+                <time datetime="2008-02-14 20:00">
+                  <i class="fa fa-clock-o"></i> 2 منذ ساعات</time>
+              </li>
+              <li>
+                <i class="fa fa-twitter"></i>
+                <span>@كرة السلة</span>
+                <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
+                  سيلهي القارئ عن التركيز
+                  على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي
+                </p>
+                <time datetime="2008-02-14 20:00">
+                  <i class="fa fa-clock-o"></i> 4 منذ ساعات</time>
+              </li>
+            </ul>
+          </aside>
+          <!--// Widget Twitter \\-->
+
+
+        </div>
+      </div>
+      <a href="#" class="sportsmagazine-back-top">
+        <i class="fa fa-angle-up"></i>
+      </a>
+    </div>
+    <!--// Footer Widget \\-->
+
+    <!--// CopyRight \\-->
+    <div class="sportsmagazine-copyright">
+      <div class="container">
+        <div class="row">
+          <aside class="col-md-6 sportsmagazine-copyright-left">
+            <p>© 2018 جميع الحقوق محفوظة -
+              <a href="index.html">YAckeensolution</a>
+            </p>
+          </aside>
+          <aside class="col-md-6 sportsmagazine-copyright-right">
+            <ul class="sportsmagazine-copyright-link">
+              <li>
+                <a href="404.html" class="sportsmagazine-colorhover">أحكام وشروط</a>
+              </li>
+              <li>
+                <a href="404.html" class="sportsmagazine-colorhover">سياسة الخصوصية</a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <!--// CopyRight \\-->
+
+  </footer>
+  <!--// Footer \\-->
+
+  <div class="clearfix"></div>
+</div>
+
+
+<!-- SearchModal -->
+<div class="searchmodal modal fade" id="searchModal" tabindex="-1" role="dialog">
+  <a href="#" data-dismiss="modal" class="sportsmagazine-modal-close"><i class="icon-uniF106"></i></a>
+  <div class="modal-dialog" role="document">
+    <div class="container">
+      <div class="row">
+        <form class="sportsmagazine-search-box">
+          <input type="text" value="Search Your Keyword" onblur="if(this.value == '') { this.value ='Search Your Keyword'; }"
+            onfocus="if(this.value =='Search Your Keyword') { this.value = ''; }">
+          <input type="submit" value="">
+          <i class="fa fa-search"></i>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+  <span class="subheader-transparent"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>قائمة بالحكام</h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="sportsmagazine-breadcrumb">
+          <li><a routerLink="/">الرئيسية</a></li>
+          <li>الحكام</li>
+        </ul>
+      </div>
+      <div class="col-md-12">
+        
+        <a  class="Coaches-btn" style="color:white !important">دلیل مبسط عن كیف تصبح حكم </a><br>
+        <a routerLink="/courses"  class="Coaches-btn" style="color:white !important">الدورات التدریبیة</a>
+    
+      </div>
+      <!-- //search + filter -->
+      <section class="search-form col-md-12">
+        <form >
+          <p class="inp-wrap search-wrap">
+            <input type="search"  class="grid-75" placeholder="بحث" [(ngModel)]="Rulername" [ngModelOptions]="{standalone: true}" /></p>
+   
+          <p class="inp-wrap submit-wrap">
+            <button type="button" class="grid-100 btn">
+
+              <i class="fa fa-search"></i>
+            </button>
+          </p>
+        </form>
+      </section>
+      <!-- //serach + filter -->
+    </div>
+  </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+  <!--// Main Section \\-->
+  <div class="sportsmagazine-main-section sportsmagazine-player-listfull">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="sportsmagazine-player sportsmagazine-player-list">
+            <ul class="row">
+              <li class="col-md-6" *ngFor="let ruler of FilteredRulers | searchfilter: 'NameA' : Rulername">
+                <figure><a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{ruler.ImageUrl}}" (error)="errorHandler($event)" style="height:320px" alt=""><i class="fa fa-link"></i></a></figure>
+                <div class="sportsmagazine-player-list-text" style="overflow-y:auto ; overflow-x: hidden;height:320px" id="style-3">
+                  
+                  <h5 ><a>{{ruler.NameA}}</a> &nbsp;&nbsp; <h1 class="sportsmagazine-forword-btn btn-lg"style="font-size:20px ; color:white">{{ruler.Category}}</h1></h5>
+                  <p innerHTML="{{ruler.DescriptionA}} ">
+                    
+                  </p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

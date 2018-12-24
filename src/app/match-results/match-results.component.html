@@ -1,0 +1,172 @@
+<!--// SubHeader-5 \\-->
+<div class="sportsmagazine-subheader">
+  <span class="subheader-transparent"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1> نتائج المباريات </h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="sportsmagazine-breadcrumb"  *ngIf="Route.url ==='/match-result'">
+          <li><a>المباريات</a></li>
+          <li> نتائج المباريات </li>
+        </ul>
+        <ul class="sportsmagazine-breadcrumb"  *ngIf="Route.url !=='/match-result'">
+          <li><a>الفرق الوطنية</a></li>
+          <li> نتائج المباريات </li>
+        </ul>
+      </div>
+      <!-- //search + filter -->
+      <section class="search-form col-md-12">
+        <form>
+          <p class="inp-wrap search-wrap">
+            <select name="search categories" id="categories" class="grid-80" [(ngModel)]="Age" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>الفئة العمرية</option>
+              <option *ngFor="let age of Ages" [ngValue]="age.ID">{{age.NameA}}</option>
+            </select>
+          </p>
+          <p class="inp-wrap cat-wrap">
+            <select name="search categories" id="categories" class="grid-80" [(ngModel)]="Div" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>الدرجة</option>
+              <option *ngFor="let div of Divs" [ngValue]="div.ID">{{div.NameA}} </option>
+            </select>
+          </p>
+
+          <p class="inp-wrap cat-wrap" *ngIf="Route.url ==='/match-result'">
+            <select class="grid-80" [(ngModel)]="ClubName" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>النادي</option>
+              <option *ngFor="let club of Clubs">{{club.NameA}}</option>
+            </select>
+          </p>
+
+          <p class="inp-wrap submit-wrap">
+            <button type="button" class="grid-100 btn" (click)="FilterMatches(Age,Div,ClubName)"  *ngIf="Route.url ==='/match-result'">
+
+              <i class="fa fa-search"></i>
+            </button>
+            <button type="button" class="grid-100 btn" (click)="FilterNMatches(Age,Div)"  *ngIf="Route.url !=='/match-result'">
+
+              <i class="fa fa-search"></i>
+            </button>
+            
+          </p>
+        </form>
+      </section>
+      <!-- //serach + filter -->
+    </div>
+  </div>
+</div>
+<!--// SubHeader-5 \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+  <!--// Main Section \\-->
+  <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="sportsmagazine-playoff-staning">
+            <h4>أحدث مباريات </h4>
+            <table class="sportsmagazine-client-detail">
+              <tr>
+                <th>الفريق الاول</th>
+                <th>الفريق التاني</th>
+                <th>نقاط الفريق الاول</th>
+                <th>نقاط الفريق التاني</th>
+                <th>الدرجة</th>
+                <th>النوع</th>
+                <th>تحت سن</th>
+                <th>التاريخ</th>
+                <th>المكان</th>
+                
+              </tr>
+              <tr *ngFor="let match of FilteredMatches">
+                <td>
+                  <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{match.LogoA}}" alt=""  (error)="errorHandler($event)"></figure>
+                  <div class="player-stats-text">
+                    <h6>{{match.ClubA}}</h6>
+                    <h6>{{match.NationalA}}</h6>
+                    
+                  </div>
+                </td>
+                <td>
+                  <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{match.LogoB}}" alt=""  (error)="errorHandler($event)"></figure>
+                  <div class="player-stats-text">
+                    <h6>{{match.ClubB}}</h6>
+                    <h6>{{match.NationalB}}</h6>
+                    
+                  </div>
+                </td>
+                <td>{{match.ScoreA}}</td>
+                <td>{{match.ScoreB}}</td>
+                <td>{{match.DivisionName}}</td>
+                <td>{{match.Gender}}</td>
+                <td>{{match.AgeName}}</td>
+                <td>{{match.Date | date}} </td>
+                <td>{{match.Place}}</td>
+
+              </tr>
+
+            </table>
+          </div>
+          <!-- <ul class="sportsmagazine-offstanding-text">
+                        <li>
+                            <h6>POS :</h6>
+                            <span>المركز</span>
+                        </li>
+                        <li>
+                            <h6>L :</h6>
+                            <span>خسائر</span>
+                        </li>
+                        <li>
+                            <h6>RAOD :</h6>
+                            <span>سجل الطريق</span>
+                        </li>
+                        <li>
+                            <h6>DIF :</h6>
+                            <span>متوسط نقطة التفاضلية</span>
+                        </li>
+                        <li>
+                            <h6>TEAMS :</h6>
+                            <span>اسماء الفرق</span>
+                        </li>
+                        <li>
+                            <h6>PCT :</h6>
+                            <span>الفوز بالنسبه</span>
+                        </li>
+                        <li>
+                            <h6>PPG :</h6>
+                            <span>النقاط لكل لعبة</span>
+                        </li>
+                        <li>
+                            <h6>STRK :</h6>
+                            <span>العلامة الحالية</span>
+                        </li>
+                        <li>
+                            <h6>HOME :</h6>
+                            <span>سجل المنزل</span>
+                        </li>
+                        <li>
+                            <h6>OP PPG :</h6>
+                            <span>معارضو النقاط لكل لعبة</span>
+                        </li>
+                        <li>
+                            <h6>L10G :</h6>
+                            <span>سجل آخر 10 ألعاب</span>
+                        </li>
+                        <li>
+                            <h6>STRK :</h6>
+                            <span>العلامة الحالية</span>
+                        </li>
+                    </ul> -->
+        </div>
+
+
+
+      </div>
+  </div>
+  <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

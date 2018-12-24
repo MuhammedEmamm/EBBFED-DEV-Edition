@@ -1,0 +1,111 @@
+<div class="sportsmagazine-subheader">
+  <span class="subheader-transparent"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>الاخبار </h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="sportsmagazine-breadcrumb" *ngIf="Route.url ==='/news'">
+          <li><a routerLink="/">الرئيسية</a></li>
+          <li>موجز الاخبار </li>
+        </ul>
+        <ul class="sportsmagazine-breadcrumb" *ngIf="Route.url!=='/news'">
+          <li><a>الفرق الوطنية</a></li>
+          <li>موجز الاخبار </li>
+        </ul>
+      </div>
+      <!-- //search + filter -->
+      <section class="search-form col-md-12">
+        <form >
+          <p class="inp-wrap search-wrap">
+            <input type="search" class="grid-75" placeholder="بحث" [(ngModel)]="NewsName" [ngModelOptions]="{standalone: true}" /></p>
+          <p class="inp-wrap cat-wrap" *ngIf="Route.url === '/news'">
+            <select class="grid-80" [(ngModel)]="ClubName" [ngModelOptions]="{standalone: true}">
+              <option value="" selected>النادي</option>
+              <option *ngFor="let club of Clubs" [ngValue]="club">{{club.NameA}}</option>
+            </select>
+          </p>
+          
+          <!-- <p class="inp-wrap cat-wrap">
+              <select name="search categories" id="categories" class="grid-80">
+                <option value="p1" selected>اللاعب</option>
+                <option value="p2">اللاعب</option>
+                <option value="p3">اللاعب </option>
+                <option value="p4">اللاعب</option>
+                <option value="p5">اللاعب</option>
+                <option value="p6">اللاعب</option>
+                <option value="p7">اللاعب </option>
+              </select>
+            </p>
+             -->
+
+          <p class="inp-wrap submit-wrap">
+            <button type="button" class="grid-100 btn" (click)="FilterNews(ClubName)" *ngIf="Route.url ==='/news'">
+              <i class="fa fa-search"></i>
+            </button>
+            <button type="button" class="grid-100 btn" *ngIf="Route.url !=='/news'">
+              <i class="fa fa-search"></i>
+            </button>
+            
+             
+          </p>
+        </form>
+        
+      </section>
+      <!-- //serach + filter -->
+    </div>
+  </div>
+</div>
+
+<div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="sportsmagazine-blog sportsmagazine-blog-grid">
+          <ul class="row">
+            <li class="col-md-4" *ngFor="let new of FilteredNews | searchfilter: 'TitleA' : NewsName">
+              <figure>
+                <a href=""><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{new.ImageUrl}}" (error)="errorHandler($event)" alt="" style="height:300px"></a>
+                <figcaption>
+                  <span><small>عامة</small></span>
+                  <a class="sportsmagazine-link-btn"><i class="fa fa-link"></i></a>
+                </figcaption>
+              </figure>
+              <section>
+                <h2><a routerLink="/news-details/{{new.ID}}">{{new.TitleA}}</a></h2>
+                <p innerHTML="{{new.ShortDescriptionA}}"> </p>
+                <a routerLink="/news-details/{{new.ID}}" class="sportsmagazine-readmore-btn">أقرا المزيد <i class="fa fa-arrow-circle-o-right"></i></a>
+                <br>
+              </section>
+              <div class="sportsmagazine-blog-grid-options">
+                <ul>
+                  <li><i class="fa fa-calendar fa-lg"></i> <a>{{new.CreationDate|date}}</a></li>
+                  <li><i class="fa fa-eye fa-lg"></i> <a>{{new.Views}}</a></li>
+                </ul>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        <h1 class="text-center" *ngIf="FilteredNews.length===0">لا يوجد اخبار</h1>
+        <!--// Pagination \\-->
+        <!-- <div class="sportsmagazine-pagination">
+                  <ul class="page-numbers">
+                      <li><a class="previous page-numbers" href="404.html"><span aria-label="Next"><i
+                                      class="fa fa-angle-right"></i></span></a></li>
+                      <li><span class="page-numbers current">1</span></li>
+                      <li><a class="page-numbers" href="404.html">2</a></li>
+                      <li><a class="page-numbers" href="404.html">3</a></li>
+                      <li><a class="page-numbers" href="404.html">4</a></li>
+                      <li><a class="next page-numbers" href="404.html"><span aria-label="Next"><i class="fa fa-angle-left"></i></span></a></li>
+                  </ul>
+              </div> -->
+        <!--// Pagination \\-->
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,862 @@
+<!-- //Sub header-3 -->
+<div class="sportsmagazine-subheader">
+  <span class="subheader-transparent"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>جدول المباريات </h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="sportsmagazine-breadcrumb" *ngIf="Routee.url === '/matches-table'">
+          <li><a>المباريات</a></li>
+          <li> جدول المباريات </li>
+        </ul>
+        <ul class="sportsmagazine-breadcrumb" *ngIf="Routee.url !== '/matches-table'">
+          <li><a>الفرق الوطنية</a></li>
+          <li> جدول المباريات </li>
+        </ul>
+      </div>
+      <!-- //search + filter -->
+      <section class="search-form col-md-12">
+        <form>
+          <p class="inp-wrap search-wrap">
+            <input type="hidden" class="grid-75" placeholder="بحث" /></p>
+          <p class="inp-wrap search-wrap">
+            <select name="search categories" id="categories" class="grid-80" [(ngModel)]="Age" [ngModelOptions]="{standalone: true}" >
+              <option value="" selected>الفئة العمرية</option>
+              <option *ngFor="let age of Ages" [ngValue]="age.ID">{{age.NameA}}</option>
+            </select>
+          </p>
+          <p class="inp-wrap cat-wrap">
+            <select name="search categories" id="categories" class="grid-80" [(ngModel)]="Div" [ngModelOptions]="{standalone: true}" >
+              <option value="" selected>الدرجة</option>
+             <option *ngFor="let div of Divs" [ngValue]="div.ID">{{div.NameA}} </option>
+            </select>
+          </p>
+          
+          <p class="inp-wrap submit-wrap">
+            <button type="button" class="grid-100 btn" (click)="FilterMatches(Age , Div) ">
+
+              <i class="fa fa-search"></i>
+            </button>
+          </p>
+        </form>
+      </section>
+      <!-- //serach + filter -->
+
+    </div>
+  </div>
+</div>
+<!-- //sub header-3 -->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content sportsmagazine-main-contentminus">
+
+  <!--// Main Section \\-->
+  <div class="sportsmagazine-main-section PT-25">
+    <div class="container">
+      <div class="row">
+     
+        <div class="col-md-8">
+
+
+          <!-- <section id="calendar" class="collectonme">
+            <div id="day-labels">
+              <div class="label">سبت</div>
+              <div class="label">حد</div>
+              <div class="label">اتنين</div>
+              <div class="label">ثلاثاء</div>
+              <div class="label">الاربعاء</div>
+              <div class="label">الخميس</div>
+              <div class="label">الجمعه</div>
+
+            </div>
+            <div id="one" class="week">
+
+              <div id="1" class="day">
+                <span class="date">1</span>
+                <div class="surprise ">
+                  
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+
+              </div>
+              <div id="2" class="day">
+                <span class="date">2</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div id="3" class="day">
+                <span class="date">3</span>
+
+              </div>
+              <div id="4" class="day">
+                <span class="date">4</span>
+
+              </div>
+              <div id="5" class="day">
+                <span class="date">5</span>
+
+              </div>
+              <div id="6" class="day">
+                <span class="date">6</span>
+
+              </div>
+              <div id="7" class="day">
+                <span class="date">7</span>
+
+              </div>
+            </div>
+            <div id="two" class="week">
+              <div id="8" class="day">
+                <span class="date">8</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="9" class="day">
+                <span class="date">9</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="10" class="day">
+                <span class="date">10</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="11" class="day">
+                <span class="date">11</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div id="12" class="day">
+                <span class="date">12</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="13" class="day">
+                <span class="date">13</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="14" class="day">
+                <span class="date">14</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+            <div id="three" class="week">
+
+              <div id="15" class="day">
+                <span class="date">15</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="16" class="day">
+                <span class="date">16</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="17" class="day">
+                <span class="date">17</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="18" class="day">
+                <span class="date">18</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="19" class="day">
+                <span class="date">19</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="20" class="day">
+                <span class="date">20</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div id="21" class="day">
+                <span class="date">21</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div id="four" class="week">
+
+              <div id="22" class="day">
+                <span class="date">22</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="23" class="day">
+                <span class="date">23</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="24" class="day">
+                <span class="date">24</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="25" class="day">
+                <span class="date">25</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div id="26" class="day">
+                <span class="date">26</span>
+              </div>
+              <div id="27" class="day">
+                <span class="date">27</span>
+              </div>
+              <div id="28" class="day">
+                <span class="date">28</span>
+              </div>
+            </div>
+            <div id="five" class="week">
+
+              <div id="29" class="day">
+                <span class="date">29</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="30" class="day">
+                <span class="date">30</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div id="31" class="day">
+                <span class="date">31</span>
+                <div class="surprise ">
+                  <div class="sportsmagazine-teams-match">
+                    <div class="sportsmagazine-first-team">
+                      <figure><img src="assets/extra-images/team-match-img1.png" alt=""></figure>
+                      <div class="sportsmagazine-first-team-info">
+                        <h6><a href="fixture-detail.html">Yorkshire</a></h6>
+                        <span>Bepop Institute</span>
+                      </div>
+                    </div>
+                    <div class="sportsmagazine-match-view">
+                      <h5>Pool Match # 1</h5>
+                      <span>VS</span>
+                    </div>
+                    <div class="sportsmagazine-second-team">
+                      <figure><img src="assets/extra-images/team-match-img2.png" alt=""></figure>
+                      <div class="sportsmagazine-second-team-info">
+                        <h6><a href="fixture-detail.html">Sharks Club</a></h6>
+                        <span>Marine College</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div  class="day noDate">
+            
+              </div>
+              <div  class="day noDate">
+            
+              </div>
+              <div  class="day noDate">
+            
+              </div>
+              <div  class="day noDate">
+            
+              </div>
+            </div>
+
+
+          </section> -->
+          <div class="row text-center">
+            <div class="col-md-4">
+          
+            </div>
+            <div class="col-md-4">
+              <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+            </div>
+            <div class="col-md-4">
+        
+            </div>
+          </div>
+          <br>
+          <div [ngSwitch]="view">
+            <mwl-calendar-month-view
+              *ngSwitchCase="CalendarView.Month"
+              [viewDate]="viewDate"
+              [events]="events"
+              [refresh]="refresh"
+              [activeDayIsOpen]="activeDayIsOpen"
+              (dayClicked)="dayClicked($event.day)"
+              (eventClicked)="handleEvent('Clicked', $event.event)"
+              (eventTimesChanged)="eventTimesChanged($event)">
+            </mwl-calendar-month-view>
+            <mwl-calendar-week-view
+              *ngSwitchCase="CalendarView.Week"
+              [viewDate]="viewDate"
+              [events]="events"
+              [refresh]="refresh"
+              (eventClicked)="handleEvent('Clicked', $event.event)"
+              (eventTimesChanged)="eventTimesChanged($event)">
+            </mwl-calendar-week-view>
+            <mwl-calendar-day-view
+              *ngSwitchCase="CalendarView.Day"
+              [viewDate]="viewDate"
+              [events]="events"
+              [refresh]="refresh"
+              (eventClicked)="handleEvent('Clicked', $event.event)"
+              (eventTimesChanged)="eventTimesChanged($event)">
+            </mwl-calendar-day-view>
+          </div>
+          
+
+          <div id="bottom" class="collectonme"></div>
+          <img src="assets/images/Blake-Griffin-500.gif" alt="">
+
+
+        </div>
+
+        <!--// SideBar \\-->
+        <aside class="col-md-4">
+
+
+          <!--// Widget Cetagories \\-->
+          <div class="sportsmagazine-widget-heading">
+            <h2>ترتيب الدوري</h2>
+          </div>
+          <div class="widget widget_team_ranking">
+
+            <div class="ranking-title-table">
+              <ul class="ranking-title-row">
+                <li>الترتيب</li>
+                <li>الفريق</li>
+                <li></li>
+                <li></li>
+                
+                <li class="text-center">L</li>
+                <li class="text-center">W</li>
+                <li class="text-center">IG</li>
+                <li class="text-center">OG</li>                
+                <li class="text-center">PTS</li>
+              </ul>
+            </div>
+            <div class="ranking-content-table" *ngFor="let row of Table; let i = index ">
+              <ul class="ranking-content-row">
+                <li class="text-center">{{i+1}}</li>
+                <li class="text-center">
+                  <img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{row.Logo}}" alt="">
+                  <div class="ranking-logo">
+                    <span>{{row.ClubName}}</span>
+                  </div>
+                </li>
+                <li class="text-center">{{row.Lose}}</li>
+                <li class="text-center">{{row.Winner}}</li>
+                <li class="text-center">{{row.INGoals}}</li>
+                <li class="text-center">{{row.OutGoals}}</li>
+                <li class="text-center">{{row.Points}}</li>
+              </ul>
+            </div>
+
+          </div>
+          
+          <!--// Widget Cetagories \\-->
+
+        </aside>
+        <!--// SideBar \\-->
+
+
+      </div>
+    </div>
+  </div>
+  <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->
+<section id="modal">
+  <div class="wrapper">
+      <div class="content ">
+          <div class="close"></div>
+          <div class="box"></div>
+      </div>
+  </div>
+</section>

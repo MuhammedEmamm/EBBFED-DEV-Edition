@@ -1,0 +1,55 @@
+        <!--// SubHeader \\-->
+        <div class="sportsmagazine-subheader">
+          <span class="subheader-transparent"></span>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h1>ألبوم الصور </h1>
+                  </div>
+                  <div class="col-md-12">
+                      <ul class="sportsmagazine-breadcrumb">
+                          <li><a routerLink="/">الرئيسية</a></li>
+                          <li> ألبوم الصور</li>
+                      </ul>
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      <!--// SubHeader \\-->
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+  <!--// Main Section \\-->
+  <div class="sportsmagazine-main-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="sportsmagazine-gallery sportsmagazine-fixture-gallery">
+            <ul>
+              <li *ngFor="let img of Gallery ; let i = index">
+                <figure>
+                  <a data-fancybox-group="group" class="fancybox" target="blank" href="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{img.ImageUrl}}"><img
+                      src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{img.ImageUrl}}" alt=""><i class="fas fa-eye fa-lg"></i></a>
+
+                  <figcaption>
+                    <h6 class="text-center"><time>{{img.Date | date}}</time></h6>
+
+                    <h6 innerHTML="{{img.DescriptionA}}">
+                    </h6>
+                  </figcaption>
+                </figure>
+              </li>
+
+            </ul>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

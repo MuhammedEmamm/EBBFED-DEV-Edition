@@ -1,0 +1,64 @@
+<!--// SubHeader \\-->
+<div class="sportsmagazine-subheader">
+  <span class="subheader-transparent"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1> الاندية</h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="sportsmagazine-breadcrumb">
+          <li><a routerLink="/">الرئيسية</a></li>
+          <li> الاندية</li>
+        </ul>
+      </div>
+      <!-- //search + filter -->
+      <section class="search-form col-md-12">
+        <form >
+          <p class="inp-wrap search-wrap">
+            <input type="search" class="grid-75" placeholder="بحث" [(ngModel)]="ClubName" [ngModelOptions]="{standalone: true}"/></p>
+            <p class="inp-wrap cat-wrap">
+                <select name="search categories" id="categories" class="grid-80" [(ngModel)]="Div" [ngModelOptions]="{standalone: true}">
+                  <option value="" selected>الدرجة</option>
+                  <option *ngFor="let div of Divs">{{div.NameA}} </option>
+                </select>
+              </p>
+
+          <p class="inp-wrap submit-wrap">
+            <button class="grid-100 btn" type="button" (click)="FilterClubs(Div)">
+              <i class="fa fa-search"></i>
+            </button>
+          </p>
+        </form>
+      </section>
+      <!-- //serach + filter -->
+
+    </div>
+  </div>
+</div>
+<!--// SubHeader \\-->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content">
+
+  <!--// Main Section \\-->
+  <div class="sportsmagazine-player sportsmagazine-modern-player">
+    <div class="container">
+      <ul class="row">
+        <li class="col-md-3" *ngFor="let club of FilteredClubs | searchfilter: 'NameA' : ClubName">
+          <figure>
+            <a class="text-center" routerLink="/club-details/{{club.ID}}"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{club.Logo}}" style="width:220px ; height:170px"  (error)="errorHandler($event)" alt=""></a>
+            <figcaption>
+            <a routerLink="/club-details/{{club.ID}}"><h3 class="text-center"> <span>{{club.NameA}}</span></h3></a>   
+            </figcaption>
+          </figure>
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

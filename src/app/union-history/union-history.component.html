@@ -1,0 +1,87 @@
+   <!--// SubHeader \\-->
+   <div class="sportsmagazine-subheader">
+      <span class="subheader-transparent"></span>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1> تاريخ الاتحاد </h1>
+              </div>
+              <div class="col-md-12">
+                  <ul class="sportsmagazine-breadcrumb">
+                      <li><a>الاتحاد</a></li>
+                      <li> تاريخ الاتحاد </li>
+                  </ul>
+
+              </div>
+
+          </div>
+      </div>
+  </div>
+  <!--// SubHeader \\-->
+
+  <!--// Main Content \\-->
+  <div class="sportsmagazine-main-content">
+
+      <!--// Main Section \\-->
+      <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="sportsmagazine-widget-heading">
+                          <h2> التأسيس</h2>
+                      </div>
+                      <div class="sportsmagazine-rich-editor">
+       
+
+                          <blockquote innerHTML="{{UHistory.EstablishedYearA}}"> 
+                             
+                            <span></span>
+                          </blockquote>
+
+
+                      </div>
+
+                  </div>
+                  <div class="col-md-6">
+                      <div class="sportsmagazine-widget-heading">
+                          <h2> الإنجازات</h2>
+                      </div>
+                      <div class="sportsmagazine-rich-editor">
+                          <blockquote innerHTML="{{UHistory.AchievementA}}">
+                              
+                              <span></span>
+                          </blockquote>
+
+
+                      </div>
+
+                  </div>
+
+
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="sportsmagazine-fancy-title-two">
+                          <h2>رموز <span></span></h2>
+                      </div>
+                  </div>
+                  <div class="sportsmagazine-player sportsmagazine-player-grid">
+                          <ul class="row">
+                              <li class="col-md-3" *ngFor="let per of UPersons">
+                                  <figure><a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{per.ImageUrl}}" alt="" style="height:200px"><i class="fa fa-link"></i></a><span></span></figure>
+                                  <div class="sportsmagazine-player-grid-text">
+                                      <h5><a>{{per.NameA}}</a></h5>
+                                      <p innerHTML="{{per.BriefA}}"></p>
+
+                                  </div>
+                              </li>
+                         
+                          </ul>
+                      </div>
+              </div>
+          </div>
+      </div>
+      <!--// Main Section \\-->
+
+  </div>
+  <!--// Main Content \\-->

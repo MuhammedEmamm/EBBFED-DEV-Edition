@@ -1,0 +1,99 @@
+      <!--// SubHeader \\-->
+      <div class="sportsmagazine-subheader">
+          <span class="subheader-transparent"></span>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h1>  المجلس الحالي </h1>
+                  </div>
+                  <div class="col-md-12">
+                      <ul class="sportsmagazine-breadcrumb">
+                          <li><a>الاتحاد</a></li>
+                          <li>المجلس الحالي </li>
+                      </ul>
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      <!--// SubHeader \\-->
+
+      <!--// Main Content \\-->
+      <div class="sportsmagazine-main-content">
+
+          <!--// Main Section \\-->
+          <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+              <div class="container">
+         
+                  <!-- <div class="row">
+                      <div class="col-md-12">
+                          <div class="sportsmagazine-fancy-title-two">
+                              <h2>رؤساء سابقون <span></span></h2>
+                          </div>
+                      </div>
+                      <div class="sportsmagazine-player sportsmagazine-player-grid">
+                              <ul class="row">
+                                  <li class="col-md-3">
+                                      <figure><a href="shop-detail.html"><img src="assets/extra-images/player-list-img2.jpg" alt=""><i class="fa fa-link"></i></a><span></span></figure>
+                                      <div class="sportsmagazine-player-grid-text">
+                                          <h5><a href="player-detail.html">الاسم </a></h5>
+                                          <p>مدة الرئاسة : 2015 - 2018</p>
+                                      </div>
+                                  </li>
+                                  <li class="col-md-3">
+                                      <figure><a href="shop-detail.html"><img src="assets/extra-images/player-list-img4.jpg" alt=""><i class="fa fa-link"></i></a><span></span></figure>
+                                      <div class="sportsmagazine-player-grid-text">
+                                          <h5><a href="player-detail.html">الاسم </a></h5>
+                                          <p>مدة الرئاسة : 2015 - 2018</p>
+
+                                      </div>
+                                  </li>
+                                  <li class="col-md-3">
+                                      <figure><a href="shop-detail.html"><img src="assets/extra-images/player-list-img5.jpg" alt=""><i class="fa fa-link"></i></a><span></span></figure>
+                                      <div class="sportsmagazine-player-grid-text">
+                                          <h5><a href="player-detail.html">الاسم </a></h5>
+                                          <p>مدة الرئاسة : 2015 - 2018</p>
+
+                                      </div>
+                                  </li>
+                                  <li class="col-md-3">
+                                          <figure><a href="shop-detail.html"><img src="assets/extra-images/player-list-img1.jpg" alt=""><i class="fa fa-link"></i></a><span></span></figure>
+                                          <div class="sportsmagazine-player-grid-text">
+                                              <h5><a href="player-detail.html">الاسم اللاعب</a></h5>
+                                              <p>مدة الرئاسة : 2015 - 2018</p>
+  
+                                          </div>
+                                      </li>
+                              </ul>
+                          </div>
+                  </div> -->
+                  <div class="row">
+                          <div class="col-md-12">
+                                  <div class="sportsmagazine-fancy-title-two">
+                                      <h2> المجلس الحالي <span></span></h2>
+                                  </div>
+                              </div>
+                              <div class="sportsmagazine-player sportsmagazine-player-grid">
+                                      <ul class="row">
+                                          <li class="col-md-3" *ngFor="let pre of Pres">
+                                              <figure><a><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{pre.ImageUrl}}"  (error)="errorHandler($event)" alt=""><i class="fa fa-link"></i></a><span></span></figure>
+                                              <div class="sportsmagazine-player-grid-text">
+                                                  <h5><a >{{pre.NameA}}</a></h5>
+                                                 <a href="">{{pre.TitleA}}</a>
+                                                 <p innerHTML="{{pre.BriefA}}">
+                                                     
+                                                 </p>
+  
+                                              </div>
+                                          </li>
+                                 
+                                      </ul>
+                                  </div>
+                  </div>
+              </div>
+          </div>
+          <!--// Main Section \\-->
+
+      </div>
+      <!--// Main Content \\-->

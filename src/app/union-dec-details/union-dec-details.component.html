@@ -1,0 +1,191 @@
+<!-- //Sub header -->
+<div class="sportsmagazine-subheader">
+  <span class="subheader-transparent"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>القرارات المجلس </h1>
+      </div>
+      <div class="col-md-12">
+        <ul class="sportsmagazine-breadcrumb">
+          <li><a routerLink="/union-decisions">القرارات المجلس</a></li>
+          <li> تفاصيل القرار </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- //sub header -->
+
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content sportsmagazine-main-contentminus">
+
+
+
+  <!--// Main Section \\-->
+  <div class="sportsmagazine-main-section PT-25">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8">
+          <div class="sportsmagazine-bloglarge-text">
+            <time datetime="2008-02-14 20:00">{{DesDetail.CreationDate | date}}</time>
+            <h3><a>{{DesDetail.TitleA}}</a></h3>
+
+          </div>
+          <div class="sportsmagazine-rich-editor">
+            <blockquote innerHTML="{{DesDetail.LongDescriptionA}}">
+
+              <span></span>
+            </blockquote>
+          </div>
+          <br>
+          <share-buttons [include]="['facebook','twitter','whatsapp']" [show]="3" [url]="'https://facebook.com'"
+            [showText]="true" [autoSetMeta]="false">
+          </share-buttons>
+
+
+          <!--                           
+                          <div class="sportsmagazine-section-heading">
+                              <h2>قرارات ذات صلة</h2>
+                          </div>
+                          <div class="sportsmagazine-related-article sportsmagazine-blog-artical">
+                              <ul class="row">
+                                  <li class="col-md-4">
+                                      
+                                      <div class="sportsmagazine-article-text">
+                                          <time datetime="2008-02-14 20:00">اغسطس 23rd, 2018</time>
+                                          <h5><a href="">عنوان القرار</a></h5>
+
+                                          <p class="FR-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                                              لصفحة ما سيلهي
+                                              القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة</p>
+                                      </div>
+                                   
+                                  </li>
+                                  <li class="col-md-4">
+                                      
+                                          <div class="sportsmagazine-article-text">
+                                              <time datetime="2008-02-14 20:00">اغسطس 23rd, 2018</time>
+                                              <h5><a href="">عنوان القرار</a></h5>
+  
+                                              <p class="FR-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                                                  لصفحة ما سيلهي
+                                                  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة</p>
+                                          </div>
+                                       
+                                      </li>
+                                      <li class="col-md-4">
+                                      
+                                              <div class="sportsmagazine-article-text">
+                                                  <time datetime="2008-02-14 20:00">اغسطس 23rd, 2018</time>
+                                                  <h5><a href="">عنوان القرار</a></h5>
+      
+                                                  <p class="FR-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                                                      لصفحة ما سيلهي
+                                                      القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة</p>
+                                              </div>
+                                           
+                                          </li>
+                               
+                              </ul>
+                          </div>
+ -->
+
+        </div>
+
+        <!--// SideBar \\-->
+        <aside class="col-md-4">
+
+
+          <!--// Widget Cetagories \\-->
+          <div class="sportsmagazine-widget-heading">
+            <h2>ترتيب الدوري</h2>
+          </div>
+          <div class="widget widget_team_ranking">
+
+            <div class="ranking-title-table">
+              <ul class="ranking-title-row">
+                <li>الترتيب</li>
+                <li>الفريق</li>
+                <li></li>
+                <li></li>
+                
+                <li class="text-center">L</li>
+                <li class="text-center">W</li>
+                <li class="text-center">IG</li>
+                <li class="text-center">OG</li>                
+                <li class="text-center">PTS</li>
+              </ul>
+            </div>
+            <div class="ranking-content-table" *ngFor="let row of Table; let i = index ">
+              <ul class="ranking-content-row">
+                <li class="text-center">{{i+1}}</li>
+                <li class="text-center">
+                  <img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{row.Logo}}" alt="">
+                  <div class="ranking-logo">
+                    <span>{{row.ClubName}}</span>
+                  </div>
+                </li>
+                <li class="text-center">{{row.Lose}}</li>
+                <li class="text-center">{{row.Winner}}</li>
+                <li class="text-center">{{row.INGoals}}</li>
+                <li class="text-center">{{row.OutGoals}}</li>
+                <li class="text-center">{{row.Points}}</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!--// Widget Cetagories \\-->
+
+          <!--// Widget Upcoming Matches \\-->
+          <div class="sportsmagazine-widget-heading">
+            <h2>المباريات القادمة</h2>
+          </div>
+          <div class="widget widget_matches">
+            <ul>
+              <li *ngFor="let match of NMatches" class="text-center">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="text-center">
+                      <h6><a>{{match.ClubA}}</a></h6>
+                    </div>
+
+                  </div>
+
+                  <span class="col-md-4">VS</span>
+
+                  <div class="col-md-4">
+                    <div class="text-center">
+                      <h6><a>{{match.ClubB}}</a></h6>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <h4 class="text-center">{{match.Date | date}}</h4>
+              </li>
+
+            </ul>
+          </div>
+
+
+          <!--// Widget Upcoming Matches \\-->
+
+
+
+        </aside>
+        <!--// SideBar \\-->
+
+
+      </div>
+    </div>
+  </div>
+  <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

@@ -1,0 +1,290 @@
+<!--// Main Content \\-->
+<div class="sportsmagazine-main-content sportsmagazine-main-contentminus">
+
+  <!--// Main Section \\-->
+  <div class="sportsmagazine-main-section sportsmagazine-thumb sportsmagazine-player-thumb">
+    <span class="thumb-transparent"></span>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="sportsmagazine-player-thumb-wrap club-details">
+            <figure><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{Club.Logo}}"  (error)="errorHandler($event)" alt=""></figure>
+            <div class="sportsmagazine-player-thumb-text">
+              <h3><span> {{Club.NameA}} </span></h3>
+              <ul class="sportsmagazine-player-info">
+                <li>
+                  <h5>سنه التاسيس:</h5>
+                  <span>{{Club.EstablishedYear}} </span>
+                </li>
+                <li>
+                  <h5>ألقاب سبق الفوز بها:</h5>
+                  <span innerHTML="{{Club.TitlesWon}}"></span>
+                </li>
+
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--// Main Section \\-->
+
+  <!--// Main Section \\-->
+  <div class="sportsmagazine-main-section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8">
+          <div class="sportsmagazine-section-heading">
+            <h2> نبذه عن النادي : </h2>
+          </div>
+          <div class="sportsmagazine-rich-editor">
+          
+
+            <blockquote innerHTML="{{Club.DescriptionA}}">
+              
+              <span></span>
+            </blockquote>
+            <br>
+            <share-buttons [include]="['facebook','twitter','whatsapp']" [show]="3"
+            [showText]="true" [url]="'https://twitter.com/'" [autoSetMeta]="false"></share-buttons>
+            <br>
+          </div>
+          <div class="sportsmagazine-section-heading">
+            <h2>صور النادي </h2>
+          </div>
+
+          <div class="sportsmagazine-gallery sportsmagazine-fixture-gallery">
+            <ul>
+              <li>
+                <figure>
+                  <a data-fancybox-group="group" href="assets/extra-images/fixture-gallery-img1.jpg" class="fancybox"><img src="assets/extra-images/fixture-gallery-img1.jpg"
+                      alt=""><i class="icon-signs23"></i></a>
+                  <span>12 صوره</span>
+                  <figcaption>
+                    <h6><a href="gallery.html">بطولة دورس ابطال الامم</a></h6>
+                    <time datetime="2008-02-14 20:00">May 17th, 2017</time>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a data-fancybox-group="group" href="assets/extra-images/fixture-gallery-img2.jpg" class="fancybox"><img src="assets/extra-images/fixture-gallery-img2.jpg"
+                      alt=""><i class="icon-signs23"></i></a>
+                  <span>12 صوره</span>
+                  <figcaption>
+                    <h6><a href="gallery.html">بطولة دورس ابطال الامم</a></h6>
+                    <time datetime="2008-02-14 20:00">May 17th, 2017</time>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a data-fancybox-group="group" href="assets/extra-images/fixture-gallery-img3.jpg" class="fancybox"><img src="assets/extra-images/fixture-gallery-img3.jpg"
+                      alt=""><i class="icon-signs23"></i></a>
+                  <span>12 صوره</span>
+                  <figcaption>
+                    <h6><a href="gallery.html">بطولة دورس ابطال الامم</a></h6>
+                    <time datetime="2008-02-14 20:00">May 17th, 2017</time>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a data-fancybox-group="group" href="assets/extra-images/fixture-gallery-img4.jpg" class="fancybox"><img src="assets/extra-images/fixture-gallery-img4.jpg"
+                      alt=""><i class="icon-signs23"></i></a>
+                  <span>12 صوره</span>
+                  <figcaption>
+                    <h6><a href="gallery.html">بطولة دورس ابطال الامم</a></h6>
+                    <time datetime="2008-02-14 20:00">May 17th, 2017</time>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a data-fancybox-group="group" href="assets/extra-images/fixture-gallery-img5.jpg" class="fancybox"><img src="assets/extra-images/fixture-gallery-img5.jpg"
+                      alt=""><i class="icon-signs23"></i></a>
+                  <span>12 صوره</span>
+                  <figcaption>
+                    <h6><a href="gallery.html">بطولة دورس ابطال الامم</a></h6>
+                    <time datetime="2008-02-14 20:00">May 17th, 2017</time>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <a data-fancybox-group="group" href="assets/extra-images/fixture-gallery-img6.jpg" class="fancybox"><img src="assets/extra-images/fixture-gallery-img6.jpg"
+                      alt=""><i class="icon-signs23"></i></a>
+                  <span>12 صوره</span>
+                  <figcaption>
+                    <h6><a href="gallery.html">بطولة دورس ابطال الامم</a></h6>
+                    <time datetime="2008-02-14 20:00">May 17th, 2017</time>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <!--// SideBar \\-->
+        <aside class="col-md-4">  
+
+          <!--// Widget Upcoming Matches \\-->
+          <div class="sportsmagazine-widget-heading">
+              <h2>المباريات القادمة</h2>
+            </div>
+            <div class="widget widget_matches">
+              <ul>
+                <li *ngFor="let match of NMatches" class="text-center">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="text-center">
+                        <h6><a>{{match.ClubA}}</a></h6>
+                      </div>
+  
+                    </div>
+  
+                    <span class="col-md-4">VS</span>
+  
+                    <div class="col-md-4">
+                      <div class="text-center">
+                        <h6><a>{{match.ClubB}}</a></h6>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+  
+                  <h4 class="text-center">{{match.Date | date}}</h4>
+                </li>
+  
+              </ul>
+            </div>
+          <!--// Widget Upcoming Matches \\-->
+
+          <!--// Widget Trending News \\-->
+          <!-- <div class="sportsmagazine-widget-heading">
+            <h2>أعلى الأخبار الرائجة</h2>
+          </div>
+
+          <div class="widget widget_trending_news">
+
+            <ul class="nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">مجموعة جديدة</a>
+              </li>
+              <li role="presentation">
+                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">الأكثر
+                  تعليقا</a>
+              </li>
+
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="widget_popular_news">
+                  <ul>
+                    <li>
+                      <div class="popular_news_text">
+                        <small>الفريق</small>
+                        <a href="blog-detail.html">سوف ملعب كرة
+                          السلة قدرة قصوى ل 5000 المشجعين</a>
+                        <time datetime="2008-02-14 20:00">ديسمبر
+                          21, 2017</time>
+                        <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن
+                          المحتوى المقروء لصفحة ما سيلهي
+                          القارئ عن التركيز على الشكل الخارجي
+                          للنص أو شكل توضع الفقرات
+                          في الصفحة التي يقرأها. </p>
+                      </div>
+                    </li>
+                    <li class="widget-injuries">
+                      <div class="popular_news_text">
+                        <small>الإصابات</small>
+                        <a href="blog-detail.html">سوف ملعب كرة
+                          السلة قدرة قصوى ل 5000 المشجعين</a>
+                        <time datetime="2008-02-14 20:00">ديسمبر
+                          21, 2017</time>
+                        <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن
+                          المحتوى المقروء لصفحة ما سيلهي
+                          القارئ عن التركيز على الشكل الخارجي
+                          للنص أو شكل توضع الفقرات
+                          في الصفحة التي يقرأها. </p>
+                      </div>
+                    </li>
+                    <li class="widget-theleague">
+                      <div class="popular_news_text">
+                        <small> الدوري</small>
+                        <a href="blog-detail.html">سوف ملعب كرة
+                          السلة قدرة قصوى ل 5000 المشجعين</a>
+                        <time datetime="2008-02-14 20:00">ديسمبر
+                          21, 2017</time>
+                        <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن
+                          المحتوى المقروء لصفحة ما سيلهي
+                          القارئ عن التركيز على الشكل الخارجي
+                          للنص أو شكل توضع الفقرات
+                          في الصفحة التي يقرأها. </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="widget_popular_news">
+                  <ul>
+                    <li class="widget-injuries">
+                      <div class="popular_news_text">
+                        <small>الإصابات</small>
+                        <a href="blog-detail.html">سوف ملعب كرة
+                          السلة قدرة قصوى ل 5000 المشجعين</a>
+                        <time datetime="2008-02-14 20:00">ديسمبر
+                          21, 2017</time>
+                        <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن
+                          المحتوى المقروء لصفحة ما سيلهي
+                          القارئ عن التركيز على الشكل الخارجي
+                          للنص أو شكل توضع الفقرات
+                          في الصفحة التي يقرأها. </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="popular_news_text">
+                        <small>الفريق</small>
+                        <a href="blog-detail.html">سوف ملعب كرة
+                          السلة قدرة قصوى ل 5000 المشجعين</a>
+                        <time datetime="2008-02-14 20:00">ديسمبر
+                          21, 2017</time>
+                        <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن
+                          المحتوى المقروء لصفحة ما سيلهي
+                          القارئ عن التركيز على الشكل الخارجي
+                          للنص أو شكل توضع الفقرات
+                          في الصفحة التي يقرأها. </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div> -->
+          
+          <!--// Widget Trending News \\-->
+
+
+        </aside>
+        <!--// SideBar \\-->
+
+
+      </div>
+    </div>
+  </div>
+  <!--// Main Section \\-->
+
+</div>
+<!--// Main Content \\-->

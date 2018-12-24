@@ -1,0 +1,61 @@
+        <!--// SubHeader \\-->
+        <div class="sportsmagazine-subheader">
+            <span class="subheader-transparent"></span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>قرارات المجلس  </h1>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="sportsmagazine-breadcrumb">
+                            <li><a>الاتحاد</a></li>
+                            <li> قرارات المجلس </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--// SubHeader \\-->
+
+        <!--// Main Content \\-->
+        <div class="sportsmagazine-main-content">
+
+            <!--// Main Section \\-->
+            <div class="sportsmagazine-main-section sportsmagazine-blogmodren-full">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="sportsmagazine-blog sportsmagazine-blog-grid">
+                                <ul class="row">
+                                    <li class="col-md-4" *ngFor="let desc of Decs">
+
+                                        <section>
+                                            <h2><a routerLink="/union-decision-details/{{desc.ID}}">{{desc.TitleA}}</a></h2>
+                                            <p innerHTML="{{desc.ShortDescriptionA}}">
+                                                
+                                            </p>
+                                            <a routerLink="/union-decision-details/{{desc.ID}}" class="sportsmagazine-readmore-btn">أقرا المزيد <i class="fa fa-arrow-circle-o-right"></i></a>
+
+                                        </section>
+                                        <div class="sportsmagazine-blog-grid-options">
+                                            <ul>
+                                                <li><i class="fa fa-calendar"></i> <a href="">{{desc.CreationDate | date}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section \\-->
+
+        </div>
+        <!--// Main Content \\-->

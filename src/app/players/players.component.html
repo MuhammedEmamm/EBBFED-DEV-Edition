@@ -1,0 +1,92 @@
+  
+  <!--// SubHeader -4 \\-->
+  <div class="sportsmagazine-subheader">
+    <span class="subheader-transparent"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>قائمة بالاعبين</h1>
+        </div>
+        <div class="col-md-12">
+          <ul class="sportsmagazine-breadcrumb">
+            <li><a routerLink="/">الرئيسية</a></li>
+            <li>اللاعبين</li>
+          </ul>
+        </div>
+        <!-- //search + filter -->
+        <section class="search-form col-md-12">
+            <form >
+                <p class="inp-wrap search-wrap">
+                  <input type="search" class="grid-75" placeholder="بحث" [(ngModel)]="PlayerName" [ngModelOptions]="{standalone: true}" style="font-size:20px" /></p>
+                <p class="inp-wrap cat-wrap">
+                  <select class="grid-80" [(ngModel)]="ClubName" [ngModelOptions]="{standalone: true}">
+                    <option value="" selected>النادي</option>
+                    <option *ngFor="let club of Clubs" [ngValue]="club">{{club.NameA}}</option>
+                  </select>
+                </p>
+                <!-- <p class="inp-wrap cat-wrap">
+                    <select name="search categories" id="categories" class="grid-80">
+                      <option value="p1" selected>اللاعب</option>
+                      <option value="p2">اللاعب</option>
+                      <option value="p3">اللاعب </option>
+                      <option value="p4">اللاعب</option>
+                      <option value="p5">اللاعب</option>
+                      <option value="p6">اللاعب</option>
+                      <option value="p7">اللاعب </option>
+                    </select>
+                  </p>
+                   -->
+      
+                <p class="inp-wrap submit-wrap">
+                  <button type="button" class="grid-100 btn" (click)="FilterPlayers(ClubName)">
+                    <i class="fa fa-search"></i>
+                  </button>
+                   
+                </p>
+              </form>
+              
+        </section>
+        <!-- //serach + filter -->
+      </div>
+    </div>
+  </div>
+  <!--// SubHeader -4 \\-->
+
+  <!--// Main Content \\-->
+    <div class="sportsmagazine-main-content">
+
+      <!--// Main Section \\-->
+      <div class="sportsmagazine-main-section sportsmagazine-player-gridfull">
+          <div class="container">
+              <div class="row">
+
+                  <div class="col-md-12">
+                      <div class="sportsmagazine-player sportsmagazine-player-grid" >
+                          <ul class="row">
+                              <li class="col-md-4" *ngFor="let player of FilteredPlayers | searchfilter: 'NameA' : PlayerName">
+                                  <figure><a routerLink="/player-details/{{player.ID}}"><img src="http://yakensolution.cloudapp.net/EBBFED/Content/Images/{{player.ImageUrl}}"
+                                              alt="" (error)="errorHandler($event)" style="height: 250px"><i class="fa fa-link"></i></a><span></span></figure>
+                                  <div class="sportsmagazine-player-grid-text">
+                                      <h5><a routerLink="/player-details/{{player.ID}}">{{player.NameA}}</a></h5>
+                                      <p> <i class=" fa fa-user"> </i> {{player.Age}} سنه <span class="club_name"><i class=" fa fa-fort-awesome">
+                                              </i> {{player.ClubName}}</span></p>
+
+                                  </div>
+
+                              </li>
+                   
+                          </ul>
+                      </div>
+                      <h1 class="text-center" *ngIf="FilteredPlayers.length ===0 ">لا يوجد لاعبين</h1>
+
+                  </div>
+
+      
+
+              </div>
+          </div>
+      </div>
+      <!--// Main Section \\-->
+
+  </div>
+  <!--// Main Content \\-->
